@@ -1,0 +1,962 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>Priyam & Manisha — Wedding Invitation</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Yatra+One&family=Mukta:wght@400;500;600;700&family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Noto+Serif+Bengali:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --maroon-deep: #5c0e14;
+    --maroon: #7a1620;
+    --maroon-light: #9c2430;
+    --gold: #d4af37;
+    --gold-light: #f0d896;
+    --cream: #fbf3e1;
+    --cream-dark: #f2e4c4;
+    --ink: #3a1a12;
+  }
+  * { box-sizing: border-box; margin:0; padding:0; }
+  html { scroll-behavior: smooth; }
+  body {
+    background: var(--maroon-deep);
+    color: var(--ink);
+    font-family: 'Mukta', 'EB Garamond', serif;
+    overflow-x: hidden;
+  }
+
+  .heading-font { font-family: 'Yatra One', cursive; font-weight: 400; letter-spacing: 0.5px; }
+
+  .petal {
+    position: fixed;
+    top: -5%;
+    font-size: 18px;
+    color: var(--gold-light);
+    opacity: 0.55;
+    pointer-events: none;
+    animation: fall linear infinite;
+    z-index: 1;
+  }
+  @keyframes fall {
+    to { transform: translateY(110vh) rotate(360deg); opacity: 0; }
+  }
+
+  section {
+    position: relative;
+    max-width: 640px;
+    margin: 0 auto;
+    padding: 60px 28px;
+  }
+
+  .ornament-border {
+    border: 2px solid var(--gold);
+    outline: 1px solid var(--gold);
+    outline-offset: 6px;
+    position: relative;
+  }
+
+  .corner {
+    position: absolute;
+    width: 34px; height: 34px;
+    border: 2px solid var(--gold);
+  }
+  .corner.tl { top: -8px; left: -8px; border-right:none; border-bottom:none; }
+  .corner.tr { top: -8px; right: -8px; border-left:none; border-bottom:none; }
+  .corner.bl { bottom: -8px; left: -8px; border-right:none; border-top:none; }
+  .corner.br { bottom: -8px; right: -8px; border-left:none; border-top:none; }
+
+  /* Invocation section */
+  #invocation {
+    min-height: 46vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background:
+      radial-gradient(ellipse at center, rgba(212,175,55,0.15), transparent 65%),
+      var(--maroon-deep);
+    padding: 50px 24px 40px;
+  }
+  .swastik-wrap {
+    width: 150px;
+    height: 170px;
+    margin-bottom: 14px;
+    animation: swastikGlow 3.2s ease-in-out infinite;
+  }
+  .swastik-wrap svg {
+    width: 100%;
+    height: 100%;
+    display: block;
+  }
+  @keyframes swastikGlow {
+    0%,100% { filter: drop-shadow(0 0 3px rgba(212,175,55,0.35)); transform: scale(1); }
+    50% { filter: drop-shadow(0 0 14px rgba(212,175,55,0.85)); transform: scale(1.04); }
+  }
+  .invocation-sanskrit {
+    color: var(--gold-light);
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: clamp(20px, 5.5vw, 28px);
+    letter-spacing: 1px;
+    margin-bottom: 10px;
+    opacity: 0;
+    animation: riseIn 1s ease forwards 0.3s;
+  }
+  .bengali-text {
+    font-family: 'Noto Serif Bengali', serif;
+    font-style: normal;
+    font-weight: 500;
+  }
+  .invocation-sub {
+    color: var(--cream-dark);
+    font-size: 12px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    opacity: 0;
+    animation: riseIn 1s ease forwards 0.6s;
+  }
+
+  #hero {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background:
+      radial-gradient(ellipse at top, rgba(212,175,55,0.12), transparent 60%),
+      linear-gradient(180deg, var(--maroon-deep), var(--maroon) 60%, var(--maroon-deep));
+    padding: 40px 24px;
+  }
+  .conch {
+    font-size: 40px;
+    color: var(--gold);
+    margin-bottom: 14px;
+    animation: glow 3s ease-in-out infinite;
+  }
+  @keyframes glow {
+    0%,100% { filter: drop-shadow(0 0 2px rgba(212,175,55,0.3)); }
+    50% { filter: drop-shadow(0 0 10px rgba(212,175,55,0.8)); }
+  }
+  .subtitle {
+    color: var(--gold-light);
+    letter-spacing: 4px;
+    font-size: 13px;
+    text-transform: uppercase;
+    margin-bottom: 18px;
+    opacity: 0;
+    animation: riseIn 1s ease forwards 0.2s;
+  }
+  .names {
+    color: var(--cream);
+    font-size: clamp(38px, 10.5vw, 64px);
+    line-height: 1.2;
+    text-shadow: 0 2px 18px rgba(0,0,0,0.4);
+    opacity: 0;
+    animation: riseIn 1.1s ease forwards 0.5s;
+  }
+  .amp {
+    display: block;
+    color: var(--gold);
+    font-size: 0.5em;
+    margin: 8px 0;
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+  }
+  .hero-highlight {
+    margin-top: 28px;
+    color: var(--gold);
+    font-size: 12px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    opacity: 0;
+    animation: riseIn 1s ease forwards 0.85s;
+  }
+  .hero-date {
+    color: var(--cream);
+    font-size: 30px;
+    letter-spacing: 1px;
+    margin-top: 6px;
+    opacity: 0;
+    animation: riseIn 1s ease forwards 0.95s;
+  }
+  .hero-sub-line {
+    margin-top: 18px;
+    color: var(--cream-dark);
+    font-size: 14px;
+    letter-spacing: 1px;
+    opacity: 0;
+    animation: riseIn 1s ease forwards 1.15s;
+  }
+  .hero-sub-line span { color: var(--gold-light); }
+  @keyframes riseIn {
+    from { opacity:0; transform: translateY(16px); }
+    to { opacity:1; transform: translateY(0); }
+  }
+  .scroll-cue {
+    position: absolute;
+    bottom: 28px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: var(--gold);
+    font-size: 13px;
+    letter-spacing: 2px;
+    opacity: 0.75;
+    animation: bob 2s ease-in-out infinite;
+  }
+  @keyframes bob {
+    0%,100% { transform: translate(-50%, 0); }
+    50% { transform: translate(-50%, 8px); }
+  }
+
+  .divider {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 14px;
+    color: var(--gold);
+    margin: 8px 0 34px;
+  }
+  .divider::before, .divider::after {
+    content: '';
+    height: 1px;
+    width: 60px;
+    background: linear-gradient(90deg, transparent, var(--gold));
+  }
+  .divider::after { background: linear-gradient(90deg, var(--gold), transparent); }
+
+  .section-title {
+    text-align: center;
+    color: var(--gold-light);
+    font-size: 30px;
+    margin-bottom: 6px;
+  }
+  .section-kicker {
+    text-align: center;
+    color: var(--cream-dark);
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    font-size: 12px;
+    margin-bottom: 26px;
+  }
+
+  #letter {
+    background: linear-gradient(180deg, var(--maroon), var(--maroon-deep));
+  }
+  .paper {
+    background: var(--cream);
+    background-image:
+      repeating-linear-gradient(var(--cream), var(--cream) 27px, rgba(122,22,32,0.06) 28px);
+    border-radius: 3px;
+    padding: 48px 32px;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.45), inset 0 0 0 1px var(--gold);
+    position: relative;
+  }
+  .paper::before {
+    content: '';
+    display: none;
+  }
+  .ring-icon {
+    width: 96px;
+    height: 70px;
+    margin: 0 auto 14px;
+    display: block;
+  }
+  .letter-text {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 19px;
+    line-height: 1.85;
+    color: var(--maroon-deep);
+    text-align: center;
+  }
+  .letter-text strong {
+    font-style: normal;
+    font-family: 'Yatra One', cursive;
+    font-weight: 400;
+    display: block;
+    margin: 18px 0 4px;
+    color: var(--maroon);
+    font-size: 26px;
+  }
+  .parents-line {
+    margin-top: 26px;
+    text-align: center;
+    font-family: 'Mukta', serif;
+    font-size: 16px;
+    color: var(--ink);
+    line-height: 1.7;
+  }
+  .parents-line span.role {
+    font-size: 12px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--maroon-light);
+    display: block;
+    margin-top: 14px;
+  }
+
+  #events { background: var(--maroon-deep); }
+  .event-card {
+    background: rgba(212,175,55,0.06);
+    border: 1px solid rgba(212,175,55,0.4);
+    border-radius: 10px;
+    padding: 26px 24px;
+    margin-bottom: 22px;
+    text-align: center;
+    transition: transform 0.3s, background 0.3s;
+  }
+  .event-card:hover {
+    transform: translateY(-4px);
+    background: rgba(212,175,55,0.12);
+  }
+  .event-card.highlight {
+    background: linear-gradient(160deg, rgba(212,175,55,0.22), rgba(212,175,55,0.08));
+    border: 1.5px solid var(--gold);
+    box-shadow: 0 12px 30px rgba(212,175,55,0.15);
+  }
+  .event-badge {
+    display: inline-block;
+    background: var(--gold);
+    color: var(--maroon-deep);
+    font-family: 'Mukta', sans-serif;
+    font-weight: 700;
+    font-size: 11px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    padding: 4px 12px;
+    border-radius: 20px;
+    margin-bottom: 12px;
+  }
+  .event-tag {
+    color: var(--gold);
+    font-size: 12px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+  }
+  .event-name {
+    color: var(--cream);
+    font-size: 26px;
+    margin-bottom: 6px;
+  }
+  .event-date {
+    color: var(--gold-light);
+    font-size: 17px;
+    letter-spacing: 1px;
+    margin-bottom: 4px;
+  }
+  .event-reception-big {
+    color: var(--gold);
+    font-family: 'Yatra One', cursive;
+    font-weight: 700;
+    font-size: 42px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin: 10px 0 12px;
+  }
+  .event-time {
+    color: var(--cream-dark);
+    font-size: 14px;
+    font-style: italic;
+  }
+
+  #families { background: linear-gradient(180deg, var(--maroon-deep), var(--maroon)); }
+  .family-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 18px;
+    justify-content: center;
+  }
+  .family-card {
+    background: rgba(251,243,225,0.07);
+    border: 1px solid rgba(212,175,55,0.35);
+    border-radius: 10px;
+    padding: 22px 22px;
+    flex: 1;
+    min-width: 240px;
+    text-align: center;
+  }
+  .family-role {
+    color: var(--gold);
+    font-size: 12px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+  }
+  .family-name {
+    color: var(--cream);
+    font-size: 24px;
+    margin-bottom: 10px;
+  }
+  .family-parents {
+    color: var(--cream-dark);
+    font-size: 14px;
+    line-height: 1.6;
+    margin-bottom: 14px;
+  }
+  .family-address-label {
+    color: var(--gold-light);
+    font-size: 11px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 6px;
+  }
+  .family-address {
+    color: var(--cream);
+    font-size: 14px;
+    line-height: 1.7;
+  }
+
+  #venue { background: var(--maroon); }
+  .venue-box {
+    background: var(--cream);
+    border-radius: 10px;
+    padding: 30px 26px;
+    text-align: center;
+    box-shadow: 0 16px 40px rgba(0,0,0,0.4);
+  }
+  .venue-name {
+    color: var(--maroon);
+    font-size: 26px;
+    margin-bottom: 10px;
+  }
+  .venue-address {
+    color: var(--ink);
+    font-size: 16px;
+    line-height: 1.6;
+    margin-bottom: 6px;
+  }
+  .venue-landmark {
+    color: var(--maroon-light);
+    font-size: 14px;
+    font-style: italic;
+    margin-bottom: 20px;
+  }
+  .map-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: var(--maroon);
+    color: var(--cream);
+    text-decoration: none;
+    padding: 13px 26px;
+    border-radius: 30px;
+    font-family: 'Yatra One', cursive;
+    font-size: 15px;
+    letter-spacing: 1px;
+    transition: background 0.25s, transform 0.25s;
+  }
+  .map-btn:hover { background: var(--maroon-light); transform: translateY(-2px); }
+
+  #reach { background: linear-gradient(180deg, var(--maroon), var(--maroon-deep)); }
+  .reach-box {
+    background: rgba(251,243,225,0.07);
+    border: 1px solid rgba(212,175,55,0.35);
+    border-radius: 10px;
+    padding: 30px 26px;
+  }
+  .reach-item {
+    display: flex;
+    gap: 16px;
+    align-items: flex-start;
+    margin-bottom: 22px;
+  }
+  .reach-item:last-child { margin-bottom: 0; }
+  .reach-icon {
+    font-size: 24px;
+    flex-shrink: 0;
+    width: 40px;
+    text-align: center;
+  }
+  .reach-label {
+    color: var(--gold);
+    font-size: 13px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 4px;
+  }
+  .reach-text {
+    color: var(--cream-dark);
+    font-size: 15px;
+    line-height: 1.65;
+  }
+
+  #contact { background: var(--maroon-deep); padding-bottom: 90px; }
+  .contact-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 16px;
+    margin-top: 8px;
+  }
+  .contact-card {
+    background: rgba(251,243,225,0.06);
+    border: 1px solid rgba(212,175,55,0.35);
+    border-radius: 10px;
+    padding: 18px 22px;
+    text-align: center;
+    min-width: 170px;
+    flex: 1;
+  }
+  .contact-role {
+    color: var(--gold);
+    font-size: 12px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 6px;
+  }
+  .contact-name { color: var(--cream); font-size: 17px; margin-bottom: 4px; }
+  .contact-num { color: var(--gold-light); font-size: 15px; letter-spacing: 1px; margin-bottom: 10px; }
+  .reveal-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: rgba(212,175,55,0.15);
+    border: 1px solid var(--gold);
+    color: var(--gold-light);
+    text-decoration: none;
+    font-size: 13px;
+    padding: 6px 14px;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: background 0.25s;
+  }
+  .reveal-btn:hover { background: rgba(212,175,55,0.3); }
+
+  footer {
+    text-align: center;
+    padding: 30px 20px 40px;
+    background: var(--maroon-deep);
+    color: var(--gold-light);
+    font-size: 13px;
+    letter-spacing: 2px;
+  }
+  footer .conch-small { color: var(--gold); font-size: 20px; margin-bottom: 10px; display:block; }
+
+  @media (max-width: 420px) {
+    .letter-text { font-size: 17px; }
+    section { padding: 50px 20px; }
+    .reach-item { gap: 12px; }
+  }
+
+  #gate {
+    position: fixed;
+    inset: 0;
+    z-index: 999;
+    background: var(--maroon-deep);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 30px;
+  }
+  #gate .conch { margin-bottom: 10px; }
+  #gate h2 {
+    color: var(--cream);
+    font-family: 'Yatra One', cursive;
+    font-weight: 400;
+    font-size: 26px;
+    margin-bottom: 8px;
+  }
+  #gate p {
+    color: var(--cream-dark);
+    font-size: 14px;
+    margin-bottom: 22px;
+    letter-spacing: 0.5px;
+  }
+  #gate input {
+    background: rgba(251,243,225,0.08);
+    border: 1px solid var(--gold);
+    color: var(--cream);
+    font-size: 20px;
+    letter-spacing: 6px;
+    text-align: center;
+    padding: 12px 16px;
+    border-radius: 8px;
+    width: 200px;
+    margin-bottom: 16px;
+    outline: none;
+  }
+  #gate input::placeholder { color: rgba(242,228,196,0.4); letter-spacing: 2px; }
+  #gate button {
+    background: var(--gold);
+    color: var(--maroon-deep);
+    border: none;
+    font-family: 'Yatra One', cursive;
+    font-size: 15px;
+    letter-spacing: 1px;
+    padding: 12px 30px;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: background 0.25s, transform 0.25s;
+  }
+  #gate button:hover { background: var(--gold-light); transform: translateY(-2px); }
+  #gate .gate-error {
+    color: #e8a0a0;
+    font-size: 13px;
+    margin-top: 12px;
+    height: 16px;
+  }
+  #site-content { display: none; }
+</style>
+</head>
+<body>
+
+<div id="gate">
+  <div class="conch">🐚</div>
+  <h2>Priyam &amp; Manisha</h2>
+  <p>Please enter the code shared with you to view the invitation</p>
+  <input type="text" id="gate-input" inputmode="numeric" maxlength="6" placeholder="Enter Code" autocomplete="off">
+  <br>
+  <button id="gate-submit">Enter</button>
+  <div class="gate-error" id="gate-error"></div>
+</div>
+
+<div id="site-content">
+<div id="petals"></div>
+
+<section id="invocation">
+  <div class="swastik-wrap">
+    <svg viewBox="0 0 160 180" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <radialGradient id="kalkaGrad" cx="45%" cy="35%" r="70%">
+          <stop offset="0%" stop-color="#f0d896"/>
+          <stop offset="60%" stop-color="#d4af37"/>
+          <stop offset="100%" stop-color="#c99a2e"/>
+        </radialGradient>
+      </defs>
+
+      <!-- outer paisley body -->
+      <path d="M80 14
+               C 40 14 20 48 24 84
+               C 27 112 48 132 74 140
+               C 96 147 118 138 128 118
+               C 136 102 130 84 112 78
+               C 98 73 86 82 88 96
+               C 90 106 100 108 106 100
+               C 108 112 96 122 82 118
+               C 62 112 52 92 60 70
+               C 68 48 94 38 112 50
+               C 132 63 138 92 122 114
+               C 106 136 74 144 50 128
+               C 22 110 10 72 30 42
+               C 48 16 78 8 80 14 Z"
+            fill="url(#kalkaGrad)" stroke="#7a1620" stroke-width="2" stroke-linejoin="round"/>
+
+      <!-- inner alpona-style dot & line filigree -->
+      <g fill="none" stroke="#7a1620" stroke-width="1.1" opacity="0.7">
+        <path d="M52 50 Q64 44 76 52"/>
+        <path d="M46 66 Q60 60 72 68"/>
+        <path d="M44 84 Q58 80 70 86"/>
+        <path d="M50 100 Q62 98 72 104"/>
+      </g>
+      <g fill="#7a1620" opacity="0.85">
+        <circle cx="52" cy="50" r="1.6"/>
+        <circle cx="76" cy="52" r="1.6"/>
+        <circle cx="46" cy="66" r="1.6"/>
+        <circle cx="72" cy="68" r="1.6"/>
+        <circle cx="44" cy="84" r="1.6"/>
+        <circle cx="70" cy="86" r="1.6"/>
+        <circle cx="50" cy="100" r="1.6"/>
+        <circle cx="72" cy="104" r="1.6"/>
+      </g>
+
+      <!-- small blossom at the curl tip -->
+      <g transform="translate(106,96)">
+        <circle r="4" fill="#7a1620"/>
+        <circle cx="-6" cy="-2" r="2.2" fill="#7a1620" opacity="0.8"/>
+        <circle cx="6" cy="-2" r="2.2" fill="#7a1620" opacity="0.8"/>
+        <circle cx="0" cy="-7" r="2.2" fill="#7a1620" opacity="0.8"/>
+        <circle cx="0" cy="5" r="2.2" fill="#7a1620" opacity="0.8"/>
+      </g>
+    </svg>
+  </div>
+  <div class="invocation-sanskrit bengali-text">শ্রী শ্রী প্রজাপতয়ে নমঃ</div>
+  <div class="invocation-sub">Shree Shree Prajapataye Namah</div>
+</section>
+
+<section id="hero">
+  <div class="conch">🐚</div>
+  <div class="subtitle">Together with their families</div>
+  <h1 class="names heading-font">
+    Priyam
+    <span class="amp">&amp;</span>
+    Manisha
+  </h1>
+  <div class="hero-highlight">You are cordially invited to the Reception</div>
+  <div class="hero-date">28<sup>th</sup> January 2027</div>
+  <div class="hero-sub-line">Wedding Ceremony · <span>26th January 2027, Tuesday</span></div>
+  <div class="scroll-cue">⌄ SCROLL DOWN ⌄</div>
+</section>
+
+<section id="letter">
+  <div class="section-kicker">With Blessings</div>
+  <h2 class="section-title heading-font">An Invitation</h2>
+  <div class="divider">✦</div>
+  <div class="paper ornament-border">
+    <span class="corner tl"></span><span class="corner tr"></span>
+    <span class="corner bl"></span><span class="corner br"></span>
+    <svg class="ring-icon" viewBox="0 0 200 140" xmlns="http://www.w3.org/2000/svg">
+      <!-- garland arc -->
+      <g fill="none" stroke="#c99a2e" stroke-width="1.4" opacity="0.85">
+        <path d="M30 22 Q100 -6 170 22" />
+      </g>
+      <g fill="#7a1620" opacity="0.9">
+        <circle cx="34" cy="21" r="4"/>
+        <circle cx="52" cy="12" r="4"/>
+        <circle cx="72" cy="6" r="4"/>
+        <circle cx="94" cy="2" r="4.5"/>
+        <circle cx="116" cy="6" r="4"/>
+        <circle cx="136" cy="12" r="4"/>
+        <circle cx="154" cy="21" r="4"/>
+      </g>
+      <g fill="#d4af37" opacity="0.9">
+        <circle cx="43" cy="15" r="1.8"/>
+        <circle cx="62" cy="8" r="1.8"/>
+        <circle cx="83" cy="3" r="1.8"/>
+        <circle cx="105" cy="3" r="1.8"/>
+        <circle cx="126" cy="8" r="1.8"/>
+        <circle cx="146" cy="15" r="1.8"/>
+      </g>
+
+      <!-- interlocked rings -->
+      <circle cx="80" cy="95" r="32" fill="none" stroke="#7a1620" stroke-width="6"/>
+      <circle cx="120" cy="95" r="32" fill="none" stroke="#7a1620" stroke-width="6"/>
+      <path d="M80 63 L68 47 L80 39 L92 47 Z" fill="#7a1620"/>
+      <circle cx="80" cy="49" r="5" fill="#d4af37"/>
+      <path d="M120 63 L108 47 L120 39 L132 47 Z" fill="#7a1620"/>
+      <circle cx="120" cy="49" r="5" fill="#d4af37"/>
+    </svg>
+    <p class="letter-text">
+      With hearts full of joy and gratitude, we invite you to bless our son
+      <strong>Priyam</strong>
+      and his beloved wife <strong>Manisha</strong> at their wedding reception. Your presence,
+      your blessings, and your good wishes would mean the world to our family on this
+      most auspicious occasion.
+      <br><br>
+      We look forward to celebrating this joyous evening with you, sharing in the warmth,
+      the laughter, and the togetherness of the occasion.
+    </p>
+    <div class="parents-line">
+      <span class="role">With Warm Regards</span>
+      Ranen Kumar Chatterjee &amp; Shyamali Chatterjee
+    </div>
+  </div>
+</section>
+
+<section id="events">
+  <div class="section-kicker">Save The Date</div>
+  <h2 class="section-title heading-font">Celebrations</h2>
+  <div class="divider">✦</div>
+
+  <div class="event-card highlight">
+    <div class="event-badge">You're Invited</div>
+    <div class="event-name heading-font">An Evening Together</div>
+    <div class="event-reception-big">Reception</div>
+    <div class="event-date">28th January 2027, Thursday</div>
+    <div class="event-time">Time: 7 pm onwards</div>
+  </div>
+</section>
+
+<section id="families">
+  <div class="section-kicker">Our Homes</div>
+  <h2 class="section-title heading-font">Families</h2>
+  <div class="divider">✦</div>
+  <div class="family-grid">
+    <div class="family-card">
+      <div class="family-role">Groom's Side</div>
+      <div class="family-name heading-font">Priyam Chatterjee</div>
+      <div class="family-parents">S/o Ranen Kumar Chatterjee &amp; Shyamali Chatterjee</div>
+      <div class="family-address-label">Residence</div>
+      <div class="family-address">
+        23/49, Baidhnabpara 2nd Lane,<br>
+        Mahesh, Serampore, Hooghly,<br>
+        PIN 712202, West Bengal, India
+      </div>
+    </div>
+    <div class="family-card">
+      <div class="family-role">Bride's Side</div>
+      <div class="family-name heading-font">Manisha Pal</div>
+      <div class="family-parents">D/o Asish Kumar Pal &amp; Kakali Pal</div>
+      <div class="family-address-label">Residence</div>
+      <div class="family-address">
+        Village – Beraberi, P.O. Gangadharpur Bazar,<br>
+        Near Baruipara Railway Station,<br>
+        Hooghly, PIN 712306, West Bengal, India
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="venue">
+  <div class="section-kicker">Join Us At</div>
+  <h2 class="section-title heading-font">The Venue</h2>
+  <div class="divider">✦</div>
+  <div class="venue-box">
+    <div class="venue-name heading-font">Saha Banquet</div>
+    <div class="venue-address">
+      236 G.T. Road, Mahesh, Serampore,<br>
+      Hooghly, PIN 712202, West Bengal, India
+    </div>
+    <div class="venue-landmark">Landmark: Beside State Bank of India — Mahesh Branch</div>
+    <a class="map-btn" href="https://maps.app.goo.gl/ZrbvBQ4ZrQZEoB5j8?g_st=ac" target="_blank" rel="noopener">
+      📍 Open in Google Maps
+    </a>
+  </div>
+</section>
+
+<section id="reach">
+  <div class="section-kicker">Getting There</div>
+  <h2 class="section-title heading-font">How to Reach</h2>
+  <div class="divider">✦</div>
+  <div class="reach-box">
+    <div class="reach-item">
+      <div class="reach-icon">✈️</div>
+      <div>
+        <div class="reach-label">By Air</div>
+        <div class="reach-text">
+          The nearest airport is Netaji Subhas Chandra Bose International Airport,
+          Kolkata (CCU). From the airport, Serampore is approximately an hour and a half
+          away by road, depending on traffic.
+        </div>
+      </div>
+    </div>
+    <div class="reach-item">
+      <div class="reach-icon">🚆</div>
+      <div>
+        <div class="reach-label">By Train</div>
+        <div class="reach-text">
+          From Howrah Junction, board a local train on the main line towards
+          Serampore or Rishra station. Both stations are well connected and
+          within easy reach of the venue.
+        </div>
+      </div>
+    </div>
+    <div class="reach-item">
+      <div class="reach-icon">🛺</div>
+      <div>
+        <div class="reach-label">By Road</div>
+        <div class="reach-text">
+          From Serampore or Rishra railway station, a short auto or toto ride
+          will take you directly to the Mahesh SBI stoppage, right beside the venue.
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="section-kicker">Get In Touch</div>
+  <h2 class="section-title heading-font">Contact Us</h2>
+  <div class="divider">✦</div>
+  <div class="contact-grid">
+    <div class="contact-card">
+      <div class="contact-role">Father of the Groom</div>
+      <div class="contact-name">Ranen Kumar Chatterjee</div>
+      <div class="contact-num" data-num="1" data-cc="91" data-p="3809950389" data-rev="1">••••• •••••</div>
+      <button class="reveal-btn" data-reveal="1">💬 Show Number</button>
+    </div>
+    <div class="contact-card">
+      <div class="contact-role">Groom</div>
+      <div class="contact-name">Priyam Chatterjee</div>
+      <div class="contact-num" data-num="2" data-cc="91" data-p="0982372098" data-rev="1">••••• •••••</div>
+      <button class="reveal-btn" data-reveal="2">💬 Show Number</button>
+    </div>
+    <div class="contact-card">
+      <div class="contact-role">Mother of the Groom</div>
+      <div class="contact-name">Shyamali Chatterjee</div>
+      <div class="contact-num" data-num="3" data-cc="91" data-p="1340562098" data-rev="1">••••• •••••</div>
+      <button class="reveal-btn" data-reveal="3">💬 Show Number</button>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <span class="conch-small">🐚</span>
+  PRIYAM &amp; MANISHA RECEPTION CEREMONY · 28.01.2027
+</footer>
+
+</div>
+<script>
+  // Simple client-side passcode gate. This is a light deterrent for
+  // casual visitors and bots, not real security — the code lives in
+  // this file, so anyone determined to view page source can bypass it.
+  (function () {
+    const CODE = '280127';
+    const gate = document.getElementById('gate');
+    const content = document.getElementById('site-content');
+    const input = document.getElementById('gate-input');
+    const submit = document.getElementById('gate-submit');
+    const err = document.getElementById('gate-error');
+
+    function tryUnlock() {
+      if (input.value.trim() === CODE) {
+        gate.style.display = 'none';
+        content.style.display = 'block';
+        try { sessionStorage.setItem('inviteUnlocked', '1'); } catch (e) {}
+      } else {
+        err.textContent = 'Incorrect code, please try again.';
+        input.value = '';
+        input.focus();
+      }
+    }
+
+    submit.addEventListener('click', tryUnlock);
+    input.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter') tryUnlock();
+    });
+
+    try {
+      if (sessionStorage.getItem('inviteUnlocked') === '1') {
+        gate.style.display = 'none';
+        content.style.display = 'block';
+      }
+    } catch (e) {}
+  })();
+</script>
+<script>
+  const petalChars = ['❀','✿','❁'];
+  const container = document.getElementById('petals');
+  for (let i = 0; i < 14; i++) {
+    const p = document.createElement('div');
+    p.className = 'petal';
+    p.textContent = petalChars[Math.floor(Math.random() * petalChars.length)];
+    p.style.left = Math.random() * 100 + 'vw';
+    p.style.animationDuration = (10 + Math.random() * 10) + 's';
+    p.style.animationDelay = (Math.random() * 10) + 's';
+    p.style.fontSize = (12 + Math.random() * 14) + 'px';
+    container.appendChild(p);
+  }
+
+  // Contact numbers are stored reversed and only assembled here,
+  // client-side, on demand — keeps plain numbers out of the raw HTML.
+  document.querySelectorAll('.reveal-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const id = btn.getAttribute('data-reveal');
+      const numEl = document.querySelector('.contact-num[data-num="' + id + '"]');
+      if (!numEl) return;
+      const cc = numEl.getAttribute('data-cc');
+      const revP = numEl.getAttribute('data-p');
+      const p = numEl.getAttribute('data-rev') === '1' ? revP.split('').reverse().join('') : revP;
+      const display = '+' + cc + ' ' + p.slice(0,5) + ' ' + p.slice(5);
+      numEl.textContent = display;
+
+      // build & open WhatsApp link only now, on user action
+      const waLink = document.createElement('a');
+      waLink.href = 'https://wa.me/' + cc + p;
+      waLink.target = '_blank';
+      waLink.rel = 'noopener';
+      waLink.className = 'reveal-btn';
+      waLink.textContent = '💬 Open WhatsApp';
+      btn.replaceWith(waLink);
+    });
+  });
+</script>
+
+</body>
+</html>
