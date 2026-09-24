@@ -81,10 +81,16 @@
     padding: 50px 24px 40px;
   }
   .swastik-wrap {
-    width: 150px;
-    height: 170px;
+    width: 190px;
+    height: 190px;
     margin-bottom: 14px;
     animation: swastikGlow 3.2s ease-in-out infinite;
+  }
+  .swastik-wrap img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    display: block;
   }
   .swastik-wrap svg {
     width: 100%;
@@ -622,59 +628,7 @@
 
 <section id="invocation">
   <div class="swastik-wrap">
-    <svg viewBox="0 0 160 180" xmlns="http://www.w3.org/2000/svg">
-      <defs>
-        <radialGradient id="kalkaGrad" cx="45%" cy="35%" r="70%">
-          <stop offset="0%" stop-color="#f0d896"/>
-          <stop offset="60%" stop-color="#d4af37"/>
-          <stop offset="100%" stop-color="#c99a2e"/>
-        </radialGradient>
-      </defs>
-
-      <!-- outer paisley body -->
-      <path d="M80 14
-               C 40 14 20 48 24 84
-               C 27 112 48 132 74 140
-               C 96 147 118 138 128 118
-               C 136 102 130 84 112 78
-               C 98 73 86 82 88 96
-               C 90 106 100 108 106 100
-               C 108 112 96 122 82 118
-               C 62 112 52 92 60 70
-               C 68 48 94 38 112 50
-               C 132 63 138 92 122 114
-               C 106 136 74 144 50 128
-               C 22 110 10 72 30 42
-               C 48 16 78 8 80 14 Z"
-            fill="url(#kalkaGrad)" stroke="#7a1620" stroke-width="2" stroke-linejoin="round"/>
-
-      <!-- inner alpona-style dot & line filigree -->
-      <g fill="none" stroke="#7a1620" stroke-width="1.1" opacity="0.7">
-        <path d="M52 50 Q64 44 76 52"/>
-        <path d="M46 66 Q60 60 72 68"/>
-        <path d="M44 84 Q58 80 70 86"/>
-        <path d="M50 100 Q62 98 72 104"/>
-      </g>
-      <g fill="#7a1620" opacity="0.85">
-        <circle cx="52" cy="50" r="1.6"/>
-        <circle cx="76" cy="52" r="1.6"/>
-        <circle cx="46" cy="66" r="1.6"/>
-        <circle cx="72" cy="68" r="1.6"/>
-        <circle cx="44" cy="84" r="1.6"/>
-        <circle cx="70" cy="86" r="1.6"/>
-        <circle cx="50" cy="100" r="1.6"/>
-        <circle cx="72" cy="104" r="1.6"/>
-      </g>
-
-      <!-- small blossom at the curl tip -->
-      <g transform="translate(106,96)">
-        <circle r="4" fill="#7a1620"/>
-        <circle cx="-6" cy="-2" r="2.2" fill="#7a1620" opacity="0.8"/>
-        <circle cx="6" cy="-2" r="2.2" fill="#7a1620" opacity="0.8"/>
-        <circle cx="0" cy="-7" r="2.2" fill="#7a1620" opacity="0.8"/>
-        <circle cx="0" cy="5" r="2.2" fill="#7a1620" opacity="0.8"/>
-      </g>
-    </svg>
+    <img src="https://raw.githubusercontent.com/chatterjeepriyam/wedding_reception_rsvp/main/Ganesha_ChatGPT_Art.png" alt="Lord Ganesha">
   </div>
   <div class="invocation-sanskrit bengali-text">শ্রী শ্রী প্রজাপতয়ে নমঃ</div>
   <div class="invocation-sub">Shree Shree Prajapataye Namah</div>
